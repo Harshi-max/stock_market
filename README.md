@@ -68,3 +68,207 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+# Stock Market Agent
+
+This project is a full-stack application that includes a backend API built using **FastAPI** and a frontend built using **React**. The application allows users to retrieve stock information based on ticker symbols. The backend handles the stock data retrieval, while the frontend displays the information to the user.
+
+## Project Overview
+
+The application has two main parts:
+
+- **Backend (API)**: A RESTful API built with FastAPI, providing endpoints to fetch stock information.
+- **Frontend**: A React app that interacts with the backend API to display stock data to the user.
+
+## Getting Started
+
+These instructions will help you set up both the frontend and backend portions of the application on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed on your system:
+
+- **Node.js** (for frontend)
+- **Python 3.7+** (for backend)
+- **pip** (for installing Python dependencies)
+
+### Setting Up the Backend
+
+1. Clone or download the repository.
+
+```bash
+git clone <repository-url>
+cd stock-market-agent
+
+
+
+Navigate to the src folder to set up the backend.
+
+bash
+Copy
+Edit
+cd src
+Install Python dependencies using pip.
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Run the FastAPI server.
+
+bash
+Copy
+Edit
+uvicorn main:app --reload
+Your backend will now be running at http://127.0.0.1:8000. You can access the API documentation at http://127.0.0.1:8000/docs.
+
+Backend API Endpoints
+GET /
+Returns a welcome message.
+
+Example response:
+
+json
+Copy
+Edit
+{
+  "message": "Welcome to the Stock Market API!"
+}
+GET /stock/{ticker}
+Fetches stock data for the given ticker symbol (e.g., AAPL, GOOGL).
+
+Example request:
+
+http
+Copy
+Edit
+GET http://127.0.0.1:8000/stock/AAPL
+Example response:
+
+json
+Copy
+Edit
+{
+  "ticker": "AAPL",
+  "price": "Fetching...",
+  "recommendation": "Pending analysis"
+}
+Setting Up the Frontend
+Navigate to the frontend directory.
+
+bash
+Copy
+Edit
+cd ../frontend
+Install Node.js dependencies.
+
+bash
+Copy
+Edit
+npm install
+Run the React app.
+
+bash
+Copy
+Edit
+npm start
+Your frontend will now be running at http://localhost:3000. The app will interact with the backend API to fetch and display stock data.
+
+Running the Application Locally
+Backend
+The FastAPI server will be running at http://127.0.0.1:8000.
+
+You can test the API by visiting http://127.0.0.1:8000/docs for the interactive API documentation.
+
+Frontend
+The React app will be running at http://localhost:3000.
+
+The frontend will make requests to the backend API to fetch and display stock data.
+
+Deployment
+Backend Deployment
+You can deploy the backend on any cloud platform that supports Python. Some common platforms are:
+
+Heroku:
+
+Create a Procfile with the following content:
+
+bash
+Copy
+Edit
+web: uvicorn src.main:app --host=0.0.0.0 --port=${PORT:-5000}
+Deploy your app by pushing to a Heroku Git repository.
+
+AWS:
+
+Deploy the FastAPI app on AWS Lambda or EC2.
+
+Use AWS API Gateway for routing HTTP requests to your FastAPI server.
+
+Frontend Deployment
+The frontend can be deployed on platforms like Netlify or Vercel.
+
+Netlify:
+
+Push the frontend folder to a GitHub repository and connect it to Netlify for continuous deployment.
+
+Vercel:
+
+Similar to Netlify, push the frontend folder to GitHub and deploy using Vercel.
+
+Testing
+For local testing of the backend, run the following command:
+
+bash
+Copy
+Edit
+uvicorn main:app --reload
+This will start the FastAPI server with hot reloading. To test the frontend, run:
+
+bash
+Copy
+Edit
+npm start
+Both parts should work locally on http://127.0.0.1:8000 (for backend) and http://localhost:3000 (for frontend).
+
+Challenges
+API Integration: The stock data fetching functionality is a placeholder. You can integrate real-time stock data by connecting to APIs such as Alpha Vantage, IEX Cloud, or Yahoo Finance.
+
+Stock Recommendations: The backend has a basic structure for stock recommendations, but logic for analyzing and suggesting stocks based on data will need to be implemented.
+
+Additional Information
+Frontend Tech Stack:
+
+React
+
+Axios (for API requests)
+
+Backend Tech Stack:
+
+FastAPI
+
+Uvicorn (for serving the app)
+
+Python 3.7+
+
+Dependencies listed in requirements.txt
+
+Deployment Platforms:
+
+Backend: Heroku, AWS (EC2 or Lambda)
+
+Frontend: Netlify, Vercel
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Feel free to open an issue or pull request for contributions or questions. Enjoy building your Stock Market Agent!
+
+sql
+Copy
+Edit
+
+This `README.md` file includes all necessary instructions for setting up both the backend and
+
